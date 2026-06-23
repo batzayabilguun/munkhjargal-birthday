@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  color: #5a2037;
+  background:
+    radial-gradient(circle at top left, #fff0f5, transparent 35%),
+    radial-gradient(circle at bottom right, #ffd6e7, transparent 40%),
+    linear-gradient(135deg, #fff7fb, #ffe4ef);
+  overflow-x: hidden;
+}
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.glass {
+  max-width: 900px;
+  padding: 48px 28px;
+  border-radius: 36px;
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: 0 20px 70px rgba(170, 64, 105, 0.25);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.7);
+}
+
+.small {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+h1 {
+  font-size: clamp(40px, 8vw, 86px);
+  line-height: 1;
+  margin: 16px 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: clamp(30px, 5vw, 52px);
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+section {
+  padding: 70px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+button, .btn-link {
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 22px;
+  background: #ff6f9f;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: 0 10px 24px rgba(255, 111, 159, 0.35);
+}
+
+button:hover, .btn-link:hover {
+  transform: translateY(-2px);
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  text-align: center;
+}
+
+.countdown div, .event, .cards div, .dreams div, .letter, .quiz-section {
+  background: rgba(255,255,255,0.75);
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 12px 32px rgba(170, 64, 105, 0.14);
+}
+
+.countdown span {
+  font-size: 42px;
+  font-weight: 900;
+}
+
+.timeline {
+  display: grid;
+  gap: 18px;
+}
+
+.event {
+  border-left: 8px solid #ff8eb8;
+}
+
+.event p {
+  line-height: 1.7;
+}
+
+.hint {
+  text-align: center;
+  opacity: 0.75;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 26px;
+  box-shadow: 0 16px 35px rgba(170, 64, 105, 0.2);
+  transform: rotate(-1.5deg);
+}
+
+.gallery img:nth-child(even) {
+  transform: rotate(1.5deg);
+}
+
+.cards, .dreams {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.cards div, .dreams div {
+  min-height: 120px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.quiz-section {
+  text-align: center;
+}
+
+input {
+  padding: 14px 18px;
+  width: min(420px, 100%);
+  border-radius: 999px;
+  border: 2px solid #ffabc8;
+  outline: none;
+  margin: 12px;
+  font-size: 16px;
+}
+
+.letter {
+  font-size: 19px;
+  line-height: 1.85;
+}
+
+.signature {
+  font-weight: 800;
+  text-align: right;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px 70px;
+  opacity: 0.7;
+}
+
+.heart {
+  position: fixed;
+  top: -20px;
+  animation: fall linear forwards;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+@media (max-width: 800px) {
+  .countdown, .gallery, .cards, .dreams {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery img {
+    height: 260px;
+  }
+}
+
+@media (max-width: 520px) {
+  .countdown, .gallery, .cards, .dreams {
+    grid-template-columns: 1fr;
+  }
+
+  .glass {
+    padding: 36px 20px;
+  }
+}
